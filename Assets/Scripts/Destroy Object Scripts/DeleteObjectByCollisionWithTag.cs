@@ -10,12 +10,13 @@ public class DeleteObjectByCollisionWithTag : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (destroyObjectTags.Length == 0) return;
-         if (destroyObjectTags.Contains(collision.gameObject.tag))
+
+        if (destroyObjectTags.Contains(collision.gameObject.tag))
         {
-            actOnCollision(collision.gameObject);
+            ActOnCollision(collision.gameObject);
         }
     }
-    private void actOnCollision(GameObject collision)
+    private void ActOnCollision(GameObject collision)
     {
         Destroy(gameObject);
         Debug.Log(gameObject.name + " destroyed by collision with " + collision.name);
