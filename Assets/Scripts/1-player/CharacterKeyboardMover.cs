@@ -85,9 +85,9 @@ public class CharacterKeyboardMover: MonoBehaviour {
                 velocity.y = Mathf.Sqrt(2 * jumpHeight * gravity); // חישוב מהירות קפיצה
             }
         }
-        else
+        else// הפעלת כוח הכבידה אם השחקן לא על הקרקע
         {
-            velocity.y -= gravity * Time.deltaTime; // הפעלת כוח הכבידה
+            velocity.y -= gravity * Time.deltaTime; 
         }
 
         // תנועה בכיוון שמסתכלים
