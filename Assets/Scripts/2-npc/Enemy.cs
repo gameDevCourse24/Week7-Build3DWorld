@@ -18,6 +18,7 @@ public class Enemy: MonoBehaviour {
     [SerializeField] GameObject bulletHole = null;
 
     [SerializeField] float lookRadius = 10f;
+    [SerializeField] float rotataSpeed = 5f;
     
     [Header("These fields are for display only")]
     [SerializeField] private Vector3 playerPosition;
@@ -50,14 +51,14 @@ public class Enemy: MonoBehaviour {
         Vector3 direction = (playerPosition - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0 , direction.z));
         // transform.rotation = lookRotation;
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotataSpeed);
     }
 
     private void FaceDirection() {
         Vector3 direction = (navMeshAgent.destination - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         // transform.rotation = lookRotation;
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotataSpeed);
     }
 
     private void ShootPlayer() {

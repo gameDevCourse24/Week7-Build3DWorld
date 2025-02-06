@@ -17,6 +17,10 @@ public class InputRotator : MonoBehaviour {
     [SerializeField] float minVerticalRotation = -45f;
     [SerializeField] float maxVerticalRotation = 45f;
 
+    //שני המשתנים הבאים הם עבור תיקון הסיבוב כאשר הסיבוב הולך מעבר ל-360 מעלות
+    float maxXRotation = 180f;
+    float XRotationDegrees = 360f;
+
     [SerializeField] InputAction lookLocation = new InputAction(type: InputActionType.Value);
     void OnEnable() {        lookLocation.Enable();    }
     void OnDisable() {        lookLocation.Disable();   }
@@ -35,8 +39,8 @@ public class InputRotator : MonoBehaviour {
         }
         if (verticalRotation) {
             float newRotationX = rotation.x - mouseDelta.y * rotationSpeed;
-            if (newRotationX > 180f)
-                newRotationX -= 360f;
+            if (newRotationX > maxXRotation)
+                newRotationX -= XRotationDegrees;
             float ClampedRotationX = Mathf.Clamp(newRotationX, minVerticalRotation, maxVerticalRotation);
             rotation.x = ClampedRotationX;
         }
