@@ -1,4 +1,4 @@
-# מטלה 7 - [למשחק](https://gamedevrel2024shovhalyon.itch.io/build-3d-world)
+# מטלה 7 - [לחץ כאן כדי לשחק](https://gamedevrel2024shovhalyon.itch.io/build-3d-world)
 ## הסבר כללי
 במטלה זו לקחנו את [המשחק של אראל](https://github.com/gamedev-at-ariel/06-3d-terrain-ai) שהוא בנה בשיעור והוספנו לו:
 1) חדר שינה.
